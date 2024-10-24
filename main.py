@@ -8,7 +8,8 @@ def obter_dados_usuario():
     img = input("Coloque aqui um link da web de sua imagem: ")
     whatsapp = input("Coloque aqui um link do contato de seu whatsapp: ")
 
-    # Coletar linguagens de programação
+
+
     linguagens = []
     linguagem = input("Qual linguagem de programação você domina? ")
     linguagens.append(linguagem)
@@ -16,12 +17,12 @@ def obter_dados_usuario():
     while True:
         outra = input("Há mais alguma outra linguagem que você domina? Sim/Não ").strip().lower()
         if outra == "sim":
-            linguagem = input("Qual? ")
+            linguagem = input("qual? ")
             linguagens.append(linguagem)
         elif outra == "não":
             break
         else:
-            print("Por favor, responda apenas Sim ou Não.")
+            print("por favor, responda só sim ou não:")
     
     dados = {
         "nome": nome,
@@ -39,27 +40,26 @@ def obter_dados_usuario():
 
 def gerar_html(dados):
     html_content = f"""
-    <html>
+   <html>
     <head>
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/226/226777.png" sizes="32x32">
         <title>Trabalho do Sandro 8pts</title>
+
+
+
         <style>
              body {{
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
-                background:  linear-gradient(to right, rgb(43, 42, 42) 0%, rgba(0,0,0,0) 100%);
-                color: #333;
+                background:  linear-gradient(to right, rgb(43, 42, 42), rgba(0,0,0,0));
                 margin: 0;
                
                 line-height: 1.6;
             }}
-            h1 {{
-                color: #000000;
-            }}
+ 
             p {{
-                font-size: 16px;
                 margin: 5px 0;
             }}
-            .container {{
+            .quadradao {{
                 max-width: 800px;
                 margin: auto;
                 background: #fff;
@@ -76,9 +76,9 @@ def gerar_html(dados):
                 border-radius: 20px;
                 margin-top: -58%;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-                border: 7px solid white; /* Borda branca */
+                border: 7px solid white; 
             }}
-            .Name{{
+            .nome-douser{{
                 background: linear-gradient(to left, #8baec4, #143963);
                 border-radius: 20px;
                 color: white;
@@ -96,16 +96,16 @@ def gerar_html(dados):
             .contato {{
                 border-radius: 20px;
                 background-color: rgb(255, 255, 255);
-                padding: 10px; /* Aumentei o padding para melhorar a aparência */
+                padding: 10px; 
                 width: 490px;
-                transition: transform 0.3s ease; /* Animação suave ao passar o mouse */
-                border: 2px solid #ffffff; /* Mantive a borda, mas com 2px para melhorar a visualização */
-                font-family: 'Verdana', sans-serif; /* Fonte moderna */
+                transition: transform 0.3s ease; 
+                border: 2px solid #ffffff;
+                font-family: 'Verdana', sans-serif;
                 text-align: center;
                 text-decoration: none;
                 color: #000000;
-                margin: 0 auto; /* Centraliza o botão horizontalmente */
-                display: block; /* Garante que o margin funcione para centralização */
+                margin: auto; 
+                display: block; 
                 margin-top: 40px;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
                 
@@ -113,15 +113,20 @@ def gerar_html(dados):
             
             .contato:hover {{
                 transform: scale(1.2);
-                box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.6); /* Sombra mais pronunciada */
-                font-family: 'Verdana', sans-serif; /* Garante que a fonte permaneça a mesma ao passar o mouse */
+                box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.6); 
+                font-family: 'Verdana', sans-serif; 
             }}
           
         </style>
+
+
+
+
     </head>
+
     <body>
-        <div class='container'>
-            <h1 class="Name">{dados['nome']}</h1>
+        <div class='quadradao'>
+            <h1 class="nome-douser">{dados['nome']}</h1>
             <p>|Idade: <br>{dados['idade']}</p>
             <p>|Habilidades: <br>{dados['habilidades']}</p>
             <p>|Nível Acadêmico:<br> {dados['nivel_academico']}</p>
